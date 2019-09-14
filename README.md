@@ -17,7 +17,7 @@ In `src/app/`, you will find four different files for root-component as listed b
 
 ## Let's open the `app.component.ts` file and go through it.
 
-`
+```javascript
 import { Component } from '@angular/core';
 
 @Component({
@@ -28,7 +28,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angularlearning';
 }
-`
+```
 * the first thing that you will notice is a class named as `AppComponent` with a decorator `@Component`
 * the decorator is used to let Angular know that the corresponding class will act as an Angular Component.
 * to configure the component, we will need to pass the metadata in the `@Component` decorator. The metadata has properties such as `selector`, `templateUrl`, `styleUrls` and many more. You can find the list of other properties and there significance in the [offical docs of compoent](https://angular.io/api/core/Component)
@@ -39,13 +39,13 @@ Here we will be creating a basic custom component for displaying "hello world!".
 
 So, first open your porject in vs-code. Then open the terminal window of vs-code and hit the command `ng generate component helloworld`. Once the command is executed, you will see some messages in the terminal as shown below
 
-`
+```
 CREATE src/app/helloworld/helloworld.component.html (25 bytes)
 CREATE src/app/helloworld/helloworld.component.spec.ts (656 bytes)
 CREATE src/app/helloworld/helloworld.component.ts (285 bytes)
 CREATE src/app/helloworld/helloworld.component.css (0 bytes)
 UPDATE src/app/app.module.ts (412 bytes)
-`
+````
 
 The message says that few new has been created viz. - `helloworld.component.html, helloworld.component.spec.ts, helloworld.component.ts, helloworld.component.css` and **`app.module.ts` has been updated**
 
