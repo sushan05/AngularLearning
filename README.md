@@ -47,11 +47,12 @@ CREATE src/app/helloworld/helloworld.component.css (0 bytes)
 UPDATE src/app/app.module.ts (412 bytes)
 ````
 
-The message says that few new has been created viz. - `helloworld.component.html, helloworld.component.spec.ts, helloworld.component.ts, helloworld.component.css` and **`app.module.ts` has been updated**
+The message says that few new files has been created viz. - `helloworld.component.html, helloworld.component.spec.ts, helloworld.component.ts, helloworld.component.css` and **`app.module.ts` has been updated**
 
 * In `src/app/` directory, you will find a new directory has been created - named similar to our new component name i.e. `helloworld` inside which, the above four files will be present.
-* In `app.module.ts` file, our new component will be automatically imported and will be be passed in the `decalarations` array of `@NgModule` decorator metadata
-Above steps are done my anuglar-cli for you, when you create a component through it.
+* In `app.module.ts` file, our new component will be automatically imported and will be be passed in the `decalarations` array of `@NgModule` decorator metadata.
+
+*Above steps are done my anuglar-cli for you, when you create a component through it.*
 
 ## Displaying our custom component
 * Open the template file of our component i.e. `helloworld.component.html`. You will find a default content (`<p>helloworld works!</p>`) in this file. Change it to `<h1>Hello World!</h1>` and save the file.
