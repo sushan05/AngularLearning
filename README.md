@@ -6,12 +6,12 @@ Below content is inspired from [this site](https://www.sitepoint.com/angular-int
 
 ## What is (front-end) Framework / Library / Language?
 
-(Front-end) Framework provide you a complete set of tools to develop your application; Whereas, libraries provide you a solution for a specific kind of requirement / problem. Languages (as we all know) is is a system of communication with a computer.
+(Front-end) Framework provide you a complete set of tools to develop your application; Whereas, libraries provide you a solution for a specific kind of requirement / problem. Languages (as we all know) is a system of communication with a computer.
 One major advantage of Angular framework is that it is _opinionated_, meaning it have it's own philosophy of how the web app should be built.
 
 ## History of Angualr Framework
 
-In 2012, Google had introduced **AngularJs** _(kindly note, we are talking about AngularJS and not Angular here)_ to the world which was a sudden hit. It was built with the Model-View-Controller concept in mind, though authors of the framework often called it “Model-View-*” or even “Model-View-Whatever”. It came with many powerful features allowing the developer to create rich, **single-page applications (_the page does not refresh on navigation_)** quite easily. FYI, data-binding, dependency-injection, directives were few of the powerful feature of AngularJs. 
+In 2012, Google had introduced **AngularJs** _(kindly note, we are talking about AngularJS and not Angular here)_ to the world which was a sudden hit. It was built with the Model-View-Controller concept in mind, though authors of the framework often called it “Model-View-*” or even “Model-View-Whatever”. It came with many powerful features allowing the developer to create rich, **single-page applications (_the page does not refresh on navigation_)** quite easily. FYI, data-binding, dependency-injection, directives are few of the powerful feature of AngularJs. 
 
 AngularJS became popular very quickly and received a lot of traction. Still, its maintainers decided to take another step further and proceeded to develop a new version which was initially named **Angular 2** (later, simply Angular without the “JS” part). It’s no coincidence the framework received a new name: actually, it was fully re-written and redesigned, while many concepts were reconsidered.
 
