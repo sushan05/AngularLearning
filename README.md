@@ -1,67 +1,60 @@
-# Creating first Angular application
+# Angular Component
 
-Now that you have Angular and its dependencies installed, we can move on and start building our Angular app. Let’s get started!
+A component controls a patch of screen called a view. They are the most basic building block of an UI in an Angular application. An Angular application is a tree of Angular components. **Angular components are a subset of directives.** Unlike directives, components always have a template and only one component can be instantiated per an element in a template.
 
-Starting a new angular app with the CLI is easy! From your command line, run this command: `ng new "my-app"`
-
-The command above will create a folder named `"my-app"` and will copy all the required dependencies and configuration settings. The Angular CLI does this for you:
-
-* Creates a new directory "my-app"
-* Downloads and installs Angular libraries and any other dependencies
-* Installs and configures TypeScript
-* Installs and configures Karma & Protractor (testing libraries)
-* You can also use the ng init command. The difference between ng init and ng new is that ng new requires you to specify the folder name and it will create a folder copying the files while ng init will copy the files to the current folder.
-
-Now, you can cd into the created folder. To get a quick preview of your app inside the browser, use the serve command use `ng serve`
-
-This command runs the compiler in watch mode (looks for changes in the code and recompiles if needed), starts the server, launches the app in a browser, and keeps the app running while we continue building it.
-
-The Webpack Development server listens on HTTP port 4200. Hence, if you open the url `http://localhost:4200/` you will see the app running.
-
-Note - Below documentation is inspired from [official angular site docs](https://angular.io/guide/file-structure)
-
-# Workspace configuration files
-
-All projects within a workspace share a [CLI configuration context](https://angular.io/guide/workspace-config). The top level of the workspace contains workspace-wide configuration files, configuration files for the root-level application, and subfolders for the root-level application source and test files.
-
-WORKSPACE CONFIG FILES  |  PURPOSE
------------------------  |  -----------
-.editorconfig  |  Configuration for code editors.
-.gitignore  |  Specifies intentionally untracked files that Git should ignore.
-README.md  |  Introductory documentation for the root app.
-angular.json  |  CLI configuration defaults for all projects in the workspace, including configuration options for build, serve, and test tools that the CLI uses, such as TSLint, Karma, and Protractor. For details, see Angular Workspace Configuration.
-package.json  |  Configures npm package dependencies that are available to all projects in the workspace. See npm documentation for the specific format and contents of this file.
-package-lock.json  |  Provides version information for all packages installed into node_modules by the npm client. See npm documentation for details. If you use the yarn client, this file will be yarn.lock instead.
-src/  |  Source files for the root-level application project.
-node_modules/  |  Provides npm packages to the entire workspace. Workspace-wide node_modules dependencies are visible to all projects.
-tsconfig.json  |  Default TypeScript configuration for projects in the workspace.
-tslint.json  |  Default TSLint configuration for projects in the workspace.
+Components are defined using the `@component` decorator. A component has a `selector`, `template`, `style` and other properties, using which it specifies the metadata required to process the component.
 
 
-# Application project files
+# Understanding Component
 
-By default, the CLI command `ng new my-app` creates a workspace folder named "my-app" and generates a new application skeleton in a `src/` folder at the top level of the workspace. A newly generated application contains source files for a **root module**, with a **root component** and **template**.
+For understanding component, let's take the refrence of root-component i.e. `app.component`.
+In `src/app/`, you will find four different files for root-component as listed below
+* `app.component.css`
+* `app.component.html`
+* `app.component.spec.ts`
+* `app.component.ts`
 
-## Application source files
 
-APP SUPPORT FILES  |  PURPOSE
------------------  |  ----------
-app/  |  Contains the component files in which your application logic and data are defined. 
-assets/  |  Contains image and other asset files to be copied as-is when you build your application.
-environments/  |  Contains build configuration options for particular target environments. By default there is an unnamed standard development environment and a production ("prod") environment. You can define additional target environment configurations.
-favicon.ico  |  An icon to use for this application in the bookmark bar.
-index.html  |  The main HTML page that is served when someone visits your site. The CLI automatically adds all JavaScript and CSS files when building your app, so you typically don't need to add any <script> or<link> tags here manually.
-main.ts  |  The main entry point for your application. Compiles the application with the JIT compiler and bootstraps the application's root module (AppModule) to run in the browser. You can also use the AOT compiler without changing any code by appending the --aot flag to the CLI build and serve commands.
-polyfills.ts  |  Provides polyfill scripts for browser support.
-styles.sass  |  Lists CSS files that supply styles for a project. The extension reflects the style preprocessor you have configured for the project.
-test.ts  |  The main entry point for your unit tests, with some Angular-specific configuration. You don't typically need to edit this file.
+## Let's open the `app.component.ts` file and go through it.
 
-_Inside the src/ folder, the app/ folder contains your project's logic and data. Angular components, templates, and styles go here._
+`
+import { Component } from '@angular/core';
 
-SRC/APP/ FILES  |  PURPOSE
---------------  |  --------
-app/app.component.ts  |  Defines the logic for the app's root component, named AppComponent. The view associated with this root component becomes the root of the view hierarchy as you add components and services to your application.
-app/app.component.html  |  Defines the HTML template associated with the root AppComponent.
-app/app.component.css  |  Defines the base CSS stylesheet for the root AppComponent.
-app/app.component.spec.ts  |  Defines a unit test for the root AppComponent.
-app/app.module.ts  |  Defines the root module, named AppModule, that tells Angular how to assemble the application. Initially declares only the AppComponent. As you add more components to the app, they must be declared here.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Angularlearning';
+}
+`
+* the first thing that you will notice is a class named as `AppComponent` with a decorator `@Component`
+* the decorator is used to let Angular know that the corresponding class will act as an Angular Component.
+* to configure the component, we will need to pass the metadata in the `@Component` decorator. The metadata has properties such as `selector`, `templateUrl`, `styleUrls` and many more. You can find the list of other properties and there significance in the [offical docs of compoent](https://angular.io/api/core/Component)
+
+
+# Creating a custom Component
+Here we will be creating a basic custom component for displaying "hello world!". We will using angular-cli for creating our very first custom component.
+
+So, first open your porject in vs-code. Then open the terminal window of vs-code and hit the command `ng generate component helloworld`. Once the command is executed, you will see some messages in the terminal as shown below
+
+`
+CREATE src/app/helloworld/helloworld.component.html (25 bytes)
+CREATE src/app/helloworld/helloworld.component.spec.ts (656 bytes)
+CREATE src/app/helloworld/helloworld.component.ts (285 bytes)
+CREATE src/app/helloworld/helloworld.component.css (0 bytes)
+UPDATE src/app/app.module.ts (412 bytes)
+`
+
+The message says that few new has been created viz. - `helloworld.component.html, helloworld.component.spec.ts, helloworld.component.ts, helloworld.component.css` and **`app.module.ts` has been updated**
+
+* In `src/app/` directory, you will find a new directory has been created - named similar to our new component name i.e. `helloworld` inside which, the above four files will be present.
+* In `app.module.ts` file, our new component will be automatically imported and will be be passed in the `decalarations` array of `@NgModule` decorator metadata
+Above steps are done my anuglar-cli for you, when you create a component through it.
+
+## Displaying our custom component
+* Open the template file of out component i.e. `helloworld.component.html`. You will find a default content (`<p>helloworld works!</p>`) in this file. Change it to `<h1>Hello World!</h1>` and save the file.
+* now, open the `ts` file of our component i.e. `helloworld.component.ts` and look for the selector value from it. The selector value would be `app-helloworld`.
+* now, open our root-component's template file i.e. `app.component.html`. It will have some default content which is of no use for us; so, delete it. Then open-close a `html tag` whose name is same as that of our component selector i.e. `<app-helloworld></app-helloworld>` and save the file.
+* now, serve our angular app using `ng serve --open` command and you will find that `Hello World!` text been displayed on browser.
