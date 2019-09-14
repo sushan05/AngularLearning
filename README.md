@@ -54,7 +54,7 @@ The message says that few new has been created viz. - `helloworld.component.html
 Above steps are done my anuglar-cli for you, when you create a component through it.
 
 ## Displaying our custom component
-* Open the template file of out component i.e. `helloworld.component.html`. You will find a default content (`<p>helloworld works!</p>`) in this file. Change it to `<h1>Hello World!</h1>` and save the file.
+* Open the template file of our component i.e. `helloworld.component.html`. You will find a default content (`<p>helloworld works!</p>`) in this file. Change it to `<h1>Hello World!</h1>` and save the file.
 * now, open the `ts` file of our component i.e. `helloworld.component.ts` and look for the selector value from it. The selector value would be `app-helloworld`.
 * now, open our root-component's template file i.e. `app.component.html`. It will have some default content which is of no use for us; so, delete it. Then open-close a `html tag` whose name is same as that of our component selector i.e. `<app-helloworld></app-helloworld>` and save the file.
 * now, serve our angular app using `ng serve --open` command and you will find that `Hello World!` text been displayed on browser.
